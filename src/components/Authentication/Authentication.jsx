@@ -38,14 +38,17 @@ export const Login = () => {
               </div>
               <div className="app-form-row">
                 <button type="submit" className="login-button text-white bg-orange bold uppercase">
+                  <Link to="/home">
+
                   Login
+                  </Link>
                 </button>
               </div>
               <div className="app-form-row">
                 <span className="subtitle">
                   Dont have an account yet?{" "}
                   <Link to="/sign-up">
-                    <span className="bold text-vla">Create and account</span>
+                    <span className="bold text-vla">Create an account</span>
                   </Link>
                 </span>
               </div>
@@ -59,16 +62,99 @@ export const Login = () => {
 };
 
 export const SignUp = () => {
+  const { register, handleSubmit } = useForm();
+
+  const submitForm = (data) => {};
+
   return (
-    <div>
-      <h1>Forgot password</h1>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-lg-6 col-sm-6 col-xs-12 full-page-height centered-flex">
+          <div className="col-lg-5 col-sm-10 col-xs-12 center-text">
+            <form onSubmit={handleSubmit(submitForm)}>
+              <div className="app-form-row">
+                <img src={logo} alt="" srcset="" />
+                <span className="login-notice text-vla block">Create your account </span>
+              </div>
+              <div className="app-form-row">
+                <span className="login-notice text-vla">Please fill the form below</span>
+              </div>
+
+              <div className="app-form-row">
+                <input type="text" name="firstName" className="login-input" placeholder="First Name" ref={register({ required: true })} />
+              </div>
+              <div className="app-form-row">
+                <input type="text" name="lastName" className="login-input" placeholder="Last Name" ref={register({ required: true })} />
+              </div>
+              <div className="app-form-row">
+                <input type="text" name="emailAddress" className="login-input" placeholder="Email address" ref={register({ required: true })} />
+              </div>
+              <div className="app-form-row">
+                <input type="text" name="phoneNumber" className="login-input" placeholder="Phone number" ref={register({ required: true })} />
+              </div>
+              
+              <div className="app-form-row">
+                <button type="submit" className="login-button text-white bg-orange bold uppercase">
+                  Register
+                </button>
+              </div>
+              <div className="app-form-row">
+                <span className="subtitle">
+                  Dont need an account yet?{" "}
+                  <Link to="/">
+                    <span className="bold text-vla">Click here</span>
+                  </Link>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div className="col-lg-6 col-sm-6 col-xs-12 full-page-height bg-login"></div>
+      </div>
     </div>
-  );
+    )
 };
 export const ForgotPassword = () => {
+  const { register, handleSubmit } = useForm();
+
+  const submitForm = (data) => {};
+
   return (
-    <div>
-      <h1>Forgot password</h1>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-lg-6 col-sm-6 col-xs-12 full-page-height centered-flex">
+          <div className="col-lg-5 col-sm-10 col-xs-12 center-text">
+            <form onSubmit={handleSubmit(submitForm)}>
+              <div className="app-form-row">
+                <img src={logo} alt="" srcset="" />
+                <span className="login-notice text-vla block">Recover my account </span>
+              </div>
+              <div className="app-form-row">
+                <span className="login-notice text-vla">Enter your email address to recover your password </span>
+              </div>
+
+              <div className="app-form-row">
+                <input type="text" name="emailAddress" className="login-input" placeholder="Email address" ref={register({ required: true })} />
+              </div>
+            
+              <div className="app-form-row">
+                <button type="submit" className="login-button text-white bg-orange bold uppercase">
+                  Login
+                </button>
+              </div>
+              <div className="app-form-row">
+                <span className="subtitle">
+                  Remebered it?{" "}
+                  <Link to="/">
+                    <span className="bold text-vla">Sign back in</span>
+                  </Link>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div className="col-lg-6 col-sm-6 col-xs-12 full-page-height bg-login"></div>
+      </div>
     </div>
   );
 };
