@@ -1,0 +1,40 @@
+@import "colors";
+.full-page-height {
+  min-height: 100vh;
+}
+
+.full-container-width {
+  width: 100%;
+}
+
+.block {
+  display: block;
+}
+
+.app-form-row {
+  padding: 0.5rem 0;
+}
+
+.simple-flex {
+  display: flex;
+  align-items: center;
+}
+
+.centered-flex {
+  @extend .simple-flex;
+  justify-content: center;
+}
+
+.login-input {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  padding: 0.8rem 0.8rem;
+  border: 0.2px solid $borderColor;
+}
+
+.login-button {
+  @extend .login-input;
+  cursor: pointer;
+  border-color: transparent;
+}

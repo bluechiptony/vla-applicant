@@ -1,0 +1,27 @@
+$appRed: #e0271c;
+$appOrange: #ed7d16;
+$appGold: #ffab13;
+$black: #000;
+
+$textColor: rgb(75, 75, 75);
+$borderColor: rgb(121, 121, 121);
+
+.text-vla {
+  color: $appOrange;
+}
+
+.text-red {
+  color: $appRed;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.bg-orange {
+  background-color: $appOrange;
+}
+
+.bg-gold {
+  background-color: $appGold;
+}

@@ -3,3 +3,8 @@
 @import "styles/colors";
 @import "styles/text";
 @import "styles/elements";
+
+.bg-login {
+  background-image: url("./assets/images/fine-woman.jpg");
+  background-size: cover;
+}
