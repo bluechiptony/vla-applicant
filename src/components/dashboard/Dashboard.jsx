@@ -1,54 +1,63 @@
 import React from "react";
-import "./dashboard.scss"
-import {Link} from "react-router-dom"
+import "./dashboard.scss";
+import { BrowserRouter as DashboardRouter, Switch, Route, Link } from "react-router-dom";
 
-import Logo from "../../assets/images/logomark.png"
+import Logo from "../../assets/images/logomark.png";
+import { Overview } from "../Overview/Overview";
+import { Appointments } from "../Appointments/Appointments";
+import { Jobs } from "../Jobs/Jobs";
 export const Dashboard = () => {
   return (
     <div>
-      <NavigationBar/>
-      <h1>Dashboard Component</h1>
+      <DashboardRouter>
+        <NavigationBar />
+        <div className="router-holder">
+          <Switch>
+            <Route path="/home/" exact component={Overview} />
+            <Route path="/home/appointments" component={Appointments} />
+            <Route path="/home/jobs" component={Jobs} />
+          </Switch>
+        </div>
+      </DashboardRouter>
     </div>
   );
 };
 
-
-export const NavigationBar = () =>{
-  return(
+export const NavigationBar = () => {
+  return (
     <nav className="navigation-bar">
       <div className="logo">
-
-      <img src={Logo} height={30} alt="" srcset="" />
+        <img src={Logo} height={30} alt="VLA logo" />
       </div>
-      <ul className = "menu-list">
-        <li className="menu-list-item" >
-          <Link>
+      <ul className="menu-list">
+        <li className="menu-list-item">
+          <Link to="/home">
             <span>Home</span>
           </Link>
         </li>
         <li className="menu-list-item">
-          <Link>
+          <Link to="/home/appointments">
             <span>Appointments</span>
           </Link>
         </li>
         <li className="menu-list-item">
-          <Link>
+          <Link to="/home/jobs">
             <span>Jobs</span>
           </Link>
-        </li> 
+        </li>
       </ul>
       <ul className="action-list">
         <li className="menu-list-item">
-            <Link>
-              <span>Notices</span>
-            </Link>
-          </li>
+          <Link to="/home/notification">
+            <span>Notices</span>
+          </Link>
+        </li>
         <li className="menu-list-item">
-            <Link>
-              <span>Profile</span>
-            </Link>
-          </li>
+          <Link to="/home/profile">
+            <span>Profile</span>
+          </Link>
+        </li>
       </ul>
     </nav>
-  )
-}
+  );
+};
