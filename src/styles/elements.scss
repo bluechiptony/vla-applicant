@@ -52,3 +52,11 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
+
+table {
+  width: 100%;
+  text-align: start;
+  th {
+    text-align: start;
+  }
+}
