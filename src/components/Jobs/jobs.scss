@@ -1,0 +1,18 @@
+.job-list-item {
+  box-sizing: border-box;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+  .overview-item-title {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #3f3f3f;
+  }
+  .overview-item-text {
+    font-size: 0.9rem;
+  }
+}
+
+.job-list-item:hover {
+  background-color: rgba($color: #f55e0017, $alpha: 0.04);
+}

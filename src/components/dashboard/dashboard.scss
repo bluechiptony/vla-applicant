@@ -25,13 +25,21 @@
     font-weight: bold;
     font-size: 1.1rem;
     transition: color 0.3s ease-in-out;
+    text-decoration: none;
+  }
+  a:active {
+    text-decoration: none;
   }
   a:hover {
     color: $appOrange;
   }
 }
 
+.active-route {
+  color: $appGold;
+}
+
 .router-holder {
   padding: 20px 10%;
-  background-color: rgb(242, 242, 242);
+  background-color: rgb(247, 247, 247);
 }

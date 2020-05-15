@@ -38,3 +38,8 @@
   cursor: pointer;
   border-color: transparent;
 }
+
+.ov-two-column {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
