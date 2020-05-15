@@ -2,6 +2,7 @@ import React from "react";
 import { useTable } from "react-table";
 
 export const VlaTable = () => {
+  //TODO React memo does nothing when called with one argument. review
   const data = React.useMemo(() => [{ id: 1, title: "Title od appointment", date: 15595883834349 }]);
 
   const columns = React.useMemo(() => [
