@@ -5,7 +5,7 @@ import { BrowserRouter as DashboardRouter, Switch, Route, NavLink } from "react-
 import Logo from "../../assets/images/logomark.png";
 import { Overview } from "../Overview/Overview";
 import { Appointments } from "../Appointments/Appointments";
-import { Jobs } from "../Jobs/Jobs";
+import { Jobs, Job } from "../Jobs/Jobs";
 import { Applications } from "../Applications/Applications";
 
 export const Dashboard = () => {
@@ -17,7 +17,8 @@ export const Dashboard = () => {
           <Switch>
             <Route path="/home/" exact={true} component={Overview} />
             <Route path="/home/appointments" component={Appointments} />
-            <Route path="/home/jobs" component={Jobs} />
+            <Route path="/home/jobs" exact component={Jobs} />
+            <Route path="/home/jobs/:code" component={Job} />
             <Route path="/home/applications" component={Applications} />
           </Switch>
         </div>
@@ -27,6 +28,9 @@ export const Dashboard = () => {
 };
 
 export const NavigationBar = () => {
+  // const activeStyle = {
+  //   color: "#ffab13",
+  // };
   return (
     <nav className="navigation-bar">
       <div className="logo">
@@ -34,21 +38,21 @@ export const NavigationBar = () => {
       </div>
       <ul className="menu-list">
         <li className="menu-list-item">
-          <NavLink to="/home" exact activeClassName="active-route" activeStyle={{ color: "#ffab13" }}>
+          <NavLink to="/home" exact activestyle={{ color: "#ffab13" }}>
             <span>Home</span>
           </NavLink>
         </li>
         <li className="menu-list-item">
-          <NavLink to="/home/appointments" activeClassName="active-route" activeStyle={{ color: "#ffab13" }}>
+          <NavLink to="/home/appointments" activestyle={{ color: "#ffab13" }}>
             <span>Appointments</span>
           </NavLink>
         </li>
-        <li className="menu-list-item" activeClassName="active-route" activeStyle={{ color: "#ffab13" }}>
+        <li className="menu-list-item" activestyle={{ color: "#ffab13" }}>
           <NavLink to="/home/jobs">
             <span>Jobs</span>
           </NavLink>
         </li>
-        <li className="menu-list-item" activeClassName="active-route" activeStyle={{ color: "#ffab13" }}>
+        <li className="menu-list-item" activestyle={{ color: "#ffab13" }}>
           <NavLink to="/home/applications">
             <span>Applications</span>
           </NavLink>
@@ -56,7 +60,7 @@ export const NavigationBar = () => {
       </ul>
       <ul className="action-list">
         <li className="menu-list-item">
-          <NavLink to="/home/notifications" activeClassName="active-route" activeStyle={{ color: "#ffab13" }}>
+          <NavLink to="/home/notifications" activestyle={{ color: "#ffab13" }}>
             <span>Notices</span>
           </NavLink>
         </li>
